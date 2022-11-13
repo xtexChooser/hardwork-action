@@ -52,7 +52,7 @@ const SECONDS_PER_DAY = 24 * 60 * 60;
 
       if (!commitTimes.find((t) => t >= startTime && t <= endTime)) {
         console.log("Commits at " + time + " not found")
-        commit(time);
+        await commit(time);
       }
     }
   } catch (error) {

@@ -50,11 +50,12 @@ jobs:
           name: Test
           email: test-hardwork-action@xtexx.ml
 
-      - name: Dump
-        run: |
-          git log --all
-
-      - uses: actions/upload-artifact@v3
+      - name: Upload
+        uses: actions/upload-artifact@v3
         with:
           name: repo
           path: .git
+
+      - name: Dump log
+        run: |
+          git log --all
