@@ -10,10 +10,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v2
         
       - name: Setup NodeJS
-        uses: actions/setup-node@v2.1.5
+        uses: actions/setup-node@v3
       
       - name: Install dependencies
         run: npm install
@@ -22,7 +22,7 @@ jobs:
         run: rm -rf dist && npm run build
 
       - name: Update
-        uses: stefanzweifel/git-auto-commit-action@v4.9.2
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "Update dist"
           commit_user_name: xtex Bot
@@ -44,11 +44,17 @@ jobs:
           git commit -m "init test repo"
           git branch -m main
       
-      - name: Test
+      - name: Test 1
         uses: xtexChooser/hardwork-action@main
         with:
-          name: Test
-          email: test-hardwork-action@xtexx.ml
+          name: Test1
+          email: test-hardwork-action1@xtexx.ml
+      
+      - name: Test 2
+        uses: xtexChooser/hardwork-action@main
+        with:
+          name: Test2
+          email: test-hardwork-action2@xtexx.ml
 
       - name: Upload
         uses: actions/upload-artifact@v3
