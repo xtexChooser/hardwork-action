@@ -1,5 +1,5 @@
 name: 'xtex-hardworking-action'
-description: 'An action to create a lot of commits that make you GitHub profile full of green'
+description: 'An action to create a lot of commits that make your GitHub profile full of green'
 inputs:
   name:
     description: 'Git Username'
