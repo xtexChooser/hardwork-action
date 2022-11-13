@@ -45,9 +45,7 @@ const SECONDS_PER_DAY = 24 * 60 * 60;
       ref: 'HEAD',
       since: now - seconds,
     })
-    let commitTimes = commits.map((c) => {
-      c.commit.author.timestamp
-    })
+    let commitTimes = commits.map((c) => c.commit.author.timestamp)
 
     for (let time = now - seconds; time <= now; time += SECONDS_PER_DAY) {
       let startTime = Math.floor(time / SECONDS_PER_DAY) * SECONDS_PER_DAY;
