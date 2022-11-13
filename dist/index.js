@@ -33298,7 +33298,10 @@ const SECONDS_PER_DAY = 24 * 60 * 60;
     console.log("Commit message: " + message)
     console.log("Days: " + days + "(=" + seconds + " s)")
 
-    let tree = await git.resolveRef({ fs, gitdir, ref: 'HEAD' })
+    let headCommit = await git.resolveRef({ fs, gitdir, ref: 'HEAD' })
+    console.log("HEAD commit: " + headCommit)
+    let tree = (await git.readCommit({ fs, gitdir, oid: headCommit })).commit.tree
+    console.log("HEAD tree: " + tree)
 
     async function commit(time) {
       let sha = await git.commit({
