@@ -1,0 +1,28 @@
+name: Build
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Init
+        run: |
+          git init
+          touch test
+          git add test
+          git commit -m "init test repo"
+          git branch -m main
+      
+      - name: Test
+        uses: xtexChooser/hardwork-action@main
+        with:
+          name: xtexChooser
+          email: test-hardwork-action@xtexx.ml
+
+      - name: Dump
+        run: |
+          git log --all
