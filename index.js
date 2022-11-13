@@ -53,8 +53,8 @@ const SECONDS_PER_DAY = 24 * 60 * 60;
       let startTime = Math.floor(time / SECONDS_PER_DAY) * SECONDS_PER_DAY;
       let endTime = startTime + SECONDS_PER_DAY;
 
-      if (!commitTimes.find((t) => t >= startTime && t <= endTime)) {
-        console.log("Commits at " + time + " not found")
+      if (commitTimes.find((t) => t >= startTime && t <= endTime) == undefined) {
+        console.log("Commits near " + time + " not found(after " + startTime + " & before " + endTime + ")")
         await commit(time);
       }
     }
