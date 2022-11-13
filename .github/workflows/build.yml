@@ -53,3 +53,8 @@ jobs:
       - name: Dump
         run: |
           git log --all
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: repo
+          path: .git
