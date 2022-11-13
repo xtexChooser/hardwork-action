@@ -33326,12 +33326,13 @@ const SECONDS_PER_DAY = 24 * 60 * 60;
       c.commit.author.timestamp
     })
 
-    for (let time = now - seconds; time += SECONDS_PER_DAY; time <= now) {
+    for (let time = now - seconds; time <= now; time += SECONDS_PER_DAY) {
       let startTime = Math.floor(time / SECONDS_PER_DAY) * SECONDS_PER_DAY;
       let endTime = startTime + SECONDS_PER_DAY;
 
       if (!commitTimes.find((t) => t >= startTime && t <= endTime)) {
         console.log("Commits at " + time + " not found")
+        commit(time);
       }
     }
   } catch (error) {
