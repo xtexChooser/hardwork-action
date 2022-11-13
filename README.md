@@ -14,6 +14,8 @@ To get start quickly, see this [template](https://github.com/xtexChooser/hardwor
 
 ```yaml
 - uses: actions/checkout@v2
+  with:
+    fetch-depth: 0
 - uses: xtexChooser/hardwork-action@<VERSION>
   with:
     name: Your Username
