@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -14,13 +14,15 @@ jobs:
           git init
           touch test
           git add test
+          git config --global user.email "test-hardwork-action@xtexx.ml"
+          git config --global user.name "Test"
           git commit -m "init test repo"
           git branch -m main
       
       - name: Test
         uses: xtexChooser/hardwork-action@main
         with:
-          name: xtexChooser
+          name: Test
           email: test-hardwork-action@xtexx.ml
 
       - name: Dump
