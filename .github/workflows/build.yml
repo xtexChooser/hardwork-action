@@ -28,3 +28,28 @@ jobs:
           commit_user_name: xtex Bot
           commit_user_email: bot@xtexx.ml
           commit_author: xtex Bot <bot@xtexx.ml>
+          
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Init
+        run: |
+          git init
+          touch test
+          git add test
+          git config --global user.email "test-hardwork-action@xtexx.ml"
+          git config --global user.name "Test"
+          git commit -m "init test repo"
+          git branch -m main
+      
+      - name: Test
+        uses: xtexChooser/hardwork-action@main
+        with:
+          name: Test
+          email: test-hardwork-action@xtexx.ml
+
+      - name: Dump
+        run: |
+          git log --all
