@@ -1,0 +1,25 @@
+name: 'Hardwork'
+description: 'An action to create a lot of commits that make you GitHub profile full of green'
+inputs:
+  name:
+    description: 'Git Username'
+    required: true
+  email:
+    description: 'Git Email'
+    required: true
+  dir:
+    description: '.git Directory'
+    required: true
+    default: './.git'
+  message:
+    description: 'Commit Message'
+    required: true
+    default: "Work today"
+  days:
+    description: 'Days past to create commits'
+    required: true
+    default: "31"
+outputs: {}
+runs:
+  using: 'node16'
+  main: 'index.js'
