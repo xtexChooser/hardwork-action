@@ -19,7 +19,7 @@ jobs:
         run: npm install
       
       - name: Build
-        run: npm run build
+        run: rm -rf dist && npm run build
 
       - name: Update
         uses: stefanzweifel/git-auto-commit-action@v4.9.2

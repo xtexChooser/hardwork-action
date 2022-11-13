@@ -42,7 +42,7 @@ const SECONDS_PER_DAY = 24 * 60 * 60;
       ref: 'HEAD',
       since: now - seconds,
     })
-    commits = commits.map((c) => {
+    let commitTimes = commits.map((c) => {
       c.commit.author.timestamp
     })
 
@@ -50,7 +50,7 @@ const SECONDS_PER_DAY = 24 * 60 * 60;
       let startTime = Math.floor(time / SECONDS_PER_DAY) * SECONDS_PER_DAY;
       let endTime = startTime + SECONDS_PER_DAY;
 
-      if (!commits.find((t) => t >= startTime && t <= endTime)) {
+      if (!commitTimes.find((t) => t >= startTime && t <= endTime)) {
         console.log("Commits at " + time + " not found")
       }
     }
