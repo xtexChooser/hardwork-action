@@ -22,7 +22,7 @@ jobs:
         run: rm -rf dist && npm run build
 
       - name: Update
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update dist"
           commit_user_name: xtex Bot
